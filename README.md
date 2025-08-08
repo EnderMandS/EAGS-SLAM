@@ -1,14 +1,19 @@
 # EAGS-SLAM: Edge-Assisted Gaussian Splatting SLAM
 
+<div align="center">
+  <h3>
+    <a href="https://endermands.github.io/EAGSSLAM/">Project Page</a> | 
+    <a href="">Paper (Under submission)</a>
+  </h3>
+</div>
+
 ## Abstract
-Dense simultaneous localization and mapping (SLAM) based on 3D Gaussian Splatting excels at constructing detailed and realistic scenes. Some existing methods reduce cumulative drift errors and achieve globally consistent mapping by introducing loop closure. With the introduction of more components, the system's tracking accuracy and rendering quality have improved, but its speed is unsatisfactory. Therefore, we propose EAGS-SLAM, an edge-assisted RGB-D Gaussian Splatting SLAM. EAGS-SLAM combines hand-crafted edge-based visual odometry and gaussian tracking for fast coarse-to-fine camera pose estimation. The mapping backend uses edge images to assist in gaussian seeding. Our system uses a decoupled submap system that can run loop closure in parallel, ensuring globally consistent mapping while improving system speed. We evaluated our system on real-world datasets ScanNet, TUM RGB-D, and synthetic dataset Replica. Compared to some existing state-of-the-art systems, our system is competitive or superior in terms of tracking, rendering, and system speed.
+Existing 3D Gaussian Splatting (3DGS)-based Simultaneous Localization and Mapping (SLAM) methods improve tracking accuracy and rendering quality by introducing more components such as loop closure. However, this comes at the cost of reduced speed and these methods do not effectively utilize the information in the image. In this paper, we propose EAGS-SLAM, an edge-assisted RGB-D Gaussian Splatting SLAM that utilizes edge information in images to improve system performance. EAGS-SLAM combines edge-based visual odometry and gaussian tracking, reducing camera tracking time by up to half. The mapping backend uses edge information to assist in gaussian seeding to capture geometric details in the image. Our system uses a decoupled submap system that can run loop closure in parallel, ensuring globally consistent mapping while improving system speed. We evaluated our system on real-world datasets ScanNet, TUM RGB-D, and synthetic dataset Replica. Compared to some existing state-of-the-art systems, our system is competitive or superior in terms of tracking, rendering, and system speed.
 
-## Key contributions
-- We introduce EAGS-SLAM, a dense edge-assisted RGB-D Gaussian Splatting SLAM system. We combine edge-based visual odometry and gaussian tracking to reduce tracking time. We also use edge information to assist in anisotropic gaussian seeding to improve rendering quality.
-
-- We propose a parallel loop closure method based on an improved submap system, decoupling submaps from the world coordinate system. This enables loop closure to run in parallel with tracking and mapping threads, further improving system speed.
-
-- We evaluate our system on synthetic and real-world datasets. Experimental results show that our system is competitive or superior in tracking accuracy, rendering quality, and runtime efficiency.
+## Key Features
+- **Coarse-to-Fine Tracking**: Combining edge-based visual odometry and gaussian tracking to reduce tracking time
+- **Edge-Assisted Gaussian Seeding**: Using edge information for gaussian seeding to improve rendering quality
+- **Parallel Loop Closure**: Optimized the submap system to run loop closure in parallel, improving system speed
 
 ## Note
-The code will be soon available.
+The code will be available after the paper has been accepted.
