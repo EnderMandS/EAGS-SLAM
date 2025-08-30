@@ -1,0 +1,5 @@
+inherit_from: configs/Replica/replica.yaml
+data:
+  scene_name: office3
+  input_path: /mnt/sdb/dataset/replica/loopsplat/data/Replica-SLAM/office3/
+  output_path: output/Replica/office3/

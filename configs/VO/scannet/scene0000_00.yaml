@@ -1,0 +1,45 @@
+%YAML:1.0
+---
+# Camera calibration and distortion parameters (OpenCV)
+Camera.fx: 577.590698
+Camera.fy: 578.729797
+Camera.cx: 318.905426
+Camera.cy: 242.683609
+
+Camera.k1: 0.0
+Camera.k2: 0.0
+Camera.p1: 0.0
+Camera.p2: 0.0
+Camera.k3: 0.0
+
+Camera.width: 640
+Camera.height: 480
+
+cannyThreshold1: 150
+cannyThreshold2: 100
+
+# Enable EXTERNAL_INPUT will read images from step() instead of dataset.
+# The external images input should be preprocessed.
+#
+# Set "poseOutDir" to full file name when EXTERNAL_INPUT is true. For example:
+# EXTERNAL_INPUT: 1   poseOutDir: "PATH/TO/RESULT/rgbd_dataset_freiburg1_desk.txt"
+# EXTERNAL_INPUT: 0   poseOutDir: "PATH/TO/RESULT"
+
+EXTERNAL_INPUT: 1
+poseOutDir: "/mnt/nvme1n1p1/mhl/code/LoopSplat/VO/result/scannet/scene0000_00.txt"
+
+# Image Pyramid
+# Pyramid Settings: 0 is img resolution (e.g. 640x480), then always factor 2 smaller
+PYR_MIN_LVL: 2
+PYR_MAX_LVL: 0
+DEPTH_MIN: 0.1 #in [m]
+DEPTH_MAX: 5.2 #in [m]
+
+# Increases robustness by taking edges from higher levels
+USE_EDGE_HIST: 1
+nPercentage: 0.3
+useDepthTimeStamp: 0
+SKIP_FIRST_N_FRAMES: 0
+READ_N_IMAGES: 10000
+DEPTH_SCALE_FACTOR: 1.0
+DO_RECORD_IMAGES: 0

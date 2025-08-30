@@ -1,0 +1,15 @@
+*.pyc
+.vscode
+output
+build
+.cache
+diff_rasterization/diff_rast.egg-info
+diff_rasterization/dist
+tensorboard_3d
+screenshots
+debug
+wandb
+data
+log
+CMakeFiles
+CMakeCache.txt

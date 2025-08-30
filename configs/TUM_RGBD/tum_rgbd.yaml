@@ -1,0 +1,67 @@
+project_name: "EAGS_SLAM_TUMRGBD"
+dataset_name: "tum"
+checkpoint_path: null
+use_wandb: false
+seed: 0
+device: 0
+verbose: False
+
+mapping:
+  new_submap_every: 50
+  map_every: 1
+  iterations: 100
+  new_submap_iterations: 100
+  new_submap_points_num: 100000
+  new_submap_gradient_points_num: 50000
+  new_frame_sample_size: 30000
+  new_points_radius: 0.0001
+  current_view_opt_iterations: 0.4 # What portion of iterations to spend on the current view
+  alpha_thre: 0.6
+  pruning_thre: 0.05
+  submap_using_motion_heuristic: True
+  edge_depth_thres: 0.025
+
+tracking:
+  gt_camera: False
+  w_color_loss: 0.6
+
+  iterations: 200
+  cam_rot_lr: 0.002
+  cam_trans_lr: 0.01
+  early_stop_thre: 0.00005
+  early_stop_cnt: 5
+  scheduler_factor: 0.95
+  scheduler_patience: 5
+
+  odometry_type: "odometer" # gt, const_speed, odometer
+  help_camera_initialization: False # temp option to help const_init
+  init_err_ratio: 5
+
+  filter_alpha: False
+  filter_outlier_depth: False
+  alpha_thre: 0.98
+  soft_alpha: True
+  mask_invalid_depth: True
+  enable_exposure: False
+
+  vo_setting_file: "vo_settings.yaml"
+
+cam:
+  depth_scale: 5000.0
+
+lc:
+  device: 1
+  min_similarity: 0.5
+  pgo_edge_prune_thres: 0.25
+  voxel_size: 0.02
+  pgo_max_iterations: 500
+  registration:
+    method: "gs_reg"
+    base_lr: 5.e-3
+    min_overlap_ratio: 0.2
+    use_render: False
+  min_interval: 3
+  final: False
+
+evaluation:
+  save_render: False
